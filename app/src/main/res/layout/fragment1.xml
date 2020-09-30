@@ -28,7 +28,7 @@
             android:text="MY PROFILE"
             android:textColor="@color/orange"
             android:layout_margin="10dp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold"/>
 
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="PRIMARY DETAILS"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/holo_orange_light"
         android:paddingStart="40dp"
         android:padding="5dp"
         android:paddingLeft="40dp"
@@ -245,17 +245,17 @@
         android:gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Followers"
-            android:padding="5dp"
-            android:drawablePadding="5dp"
-            android:drawableStart="@drawable/ic_baseline_people_24"
-            android:clickable="true"
             android:id="@+id/tv_followers_f1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:textColor="@android:color/black"
-            android:drawableLeft="@drawable/ic_baseline_people_24" />
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_baseline_people_24"
+            android:drawableLeft="@drawable/ic_baseline_people_24"
+            android:drawablePadding="5dp"
+            android:padding="5dp"
+            android:text="Followers"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -272,13 +272,17 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:text="Add Stories"
         android:textColor="@color/orange"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_margin="10dp"
         android:padding="10dp"
         android:id="@+id/tv_addstories_f1"
@@ -286,14 +290,15 @@
         android:gravity="center"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btn_sendmessage_f1"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:text="Send Message"
-        android:background="@drawable/button_back"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
         android:layout_margin="10dp"
-        android:id="@+id/btn_sendmessage_f1"/>
+        android:background="@drawable/button_back"
+        android:text="Send Message"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -108,7 +108,6 @@ public class BottomSheetMenu extends BottomSheetDialogFragment {
                                             @Override
                                             public void onSuccess(Void aVoid) {
 
-
                                                 Query query = df.orderByChild("uid").equalTo(currentid);
                                                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                                                     @Override
@@ -129,7 +128,6 @@ public class BottomSheetMenu extends BottomSheetDialogFragment {
                                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
-
 
                                                                 Toast.makeText(getActivity(), "Deleted", Toast.LENGTH_SHORT).show();
                                                             }

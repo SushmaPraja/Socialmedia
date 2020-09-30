@@ -19,28 +19,28 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-FirebaseAuth auth;
-
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         auth = FirebaseAuth.getInstance();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNav);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new Fragment1()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,
+                new Fragment1()).commit();
 
     }
-
     private BottomNavigationView.OnNavigationItemSelectedListener onNav = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             Fragment selected = null;
             switch (item.getItemId()){
-
                 case R.id.profile_bottom:
                     selected = new Fragment1();
                     break;
@@ -57,27 +57,25 @@ FirebaseAuth auth;
                     selected = new Fragment4();
                     break;
 
-
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,selected).commit();
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,
+                    selected).commit();
+
             return true;
         }
     };
 
-    public void logout(View view) {
-        auth.signOut();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null){
-            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        if (user == null) {
+//            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }else{
+//
+//        }
+//    }
 }

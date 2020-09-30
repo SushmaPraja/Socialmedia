@@ -3,13 +3,17 @@ package com.example.socialmedia.controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.socialmedia.LoginActivity;
+import com.example.socialmedia.MainActivity;
 import com.example.socialmedia.R;
+import com.example.socialmedia.fragment.Fragment1;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -101,7 +105,6 @@ public class UpdateProfile extends AppCompatActivity {
             public Void apply(Transaction transaction) throws FirebaseFirestoreException {
                 DocumentSnapshot snapshot = transaction.get(sDoc);
 
-
                 transaction.update(sDoc, "name",name );
                 transaction.update(sDoc,"prof",prof);
                 transaction.update(sDoc,"email",email);
@@ -114,6 +117,9 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(UpdateProfile.this, "updated", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(UpdateProfile.this, Fragment1.class);
+//                startActivity(intent);
+////                finish();
             }
         })
                 .addOnFailureListener(new OnFailureListener() {

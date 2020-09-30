@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.socialmedia.ImageActivity;
 import com.example.socialmedia.R;
 import com.example.socialmedia.controller.CreateProfile;
 import com.example.socialmedia.controller.UpdateProfile;
@@ -72,19 +73,22 @@ public class Fragment1 extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
                 case R.id.ib_edit_f1:
                     Intent intent = new Intent(getActivity(), UpdateProfile.class);
                     startActivity(intent);
                     break;
+
             case R.id.ib_menu_f1:
                 BottomSheetMenu bottomSheetMenu = new BottomSheetMenu();
                 bottomSheetMenu.show(getFragmentManager(),"bottomsheet");
 
                 break;
             case R.id.iv_f1:
-              //  Intent intent1 = new Intent(getActivity(),ImageActivity.class);
-              //  startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), ImageActivity.class);
+                startActivity(intent1);
                 break;
+
             case R.id.tv_web_f1:
                 try {
                     String url = webEt.getText().toString();
