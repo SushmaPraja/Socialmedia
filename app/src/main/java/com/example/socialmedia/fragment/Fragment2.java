@@ -20,6 +20,7 @@ import com.example.socialmedia.controller.PrivacyActivity;
 import com.example.socialmedia.controller.UpdateProfile;
 import com.example.socialmedia.model.QuestionMember;
 import com.example.socialmedia.view.BottomSheetMenu;
+import com.example.socialmedia.view.BottomSheet_f2;
 import com.example.socialmedia.view.Viewholder_Question;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -180,6 +181,8 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.iv_f2:
+                BottomSheet_f2 bottomSheetF2 = new BottomSheet_f2();
+                bottomSheetF2.show(getFragmentManager(),"bottom");
 
                 break;
 
