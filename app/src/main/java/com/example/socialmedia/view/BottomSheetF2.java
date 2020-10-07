@@ -15,7 +15,7 @@ import com.example.socialmedia.controller.Related;
 import com.example.socialmedia.controller.YourQuestion;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-public class BottomSheet_f2 extends BottomSheetDialogFragment {
+public class BottomSheetF2 extends BottomSheetDialogFragment {
     CardView cardView, cardView2;
 
     @Nullable

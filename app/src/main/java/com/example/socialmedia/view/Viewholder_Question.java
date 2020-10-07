@@ -1,5 +1,6 @@
 package com.example.socialmedia.view;
 
+import android.app.Application;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -66,5 +67,18 @@ public class Viewholder_Question extends RecyclerView.ViewHolder {
 
             }
         });
+    }
+
+    public void setitemRelated(Application application, String name, String url, String userid, String key, String question, String privacy, String time) {
+        TextView timetv = itemView.findViewById(R.id.related_time_que_item_tv);
+        ImageView imageView = itemView.findViewById(R.id.related_iv_que_item);
+        TextView nametv = itemView.findViewById(R.id.related_name_que_item_tv);
+        TextView quetv = itemView.findViewById(R.id.related_que_item_tv);
+        TextView replybtn = itemView.findViewById(R.id.related_reply_item_que_tv);
+
+        Picasso.get().load(url).into(imageView);
+        nametv.setText(name);
+        timetv.setText(time);
+        quetv.setText(question);
     }
 }
