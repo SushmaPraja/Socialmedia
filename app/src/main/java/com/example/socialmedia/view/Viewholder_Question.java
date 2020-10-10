@@ -21,7 +21,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class Viewholder_Question extends RecyclerView.ViewHolder {
+
     ImageView imageView;
+    public TextView deletebtn;
     TextView time_result,name_result,question_result;
     public ImageButton fvrt_btn;
     DatabaseReference favouriteref;
@@ -81,4 +83,17 @@ public class Viewholder_Question extends RecyclerView.ViewHolder {
         timetv.setText(time);
         quetv.setText(question);
     }
+    public void setitemdelete(Application application, String name, String url, String userid, String key, String question, String privacy, String time) {
+        TextView timetv = itemView.findViewById(R.id.delete_time_que_item_tv);
+        ImageView imageView = itemView.findViewById(R.id.delete_iv_que_item);
+        TextView nametv = itemView.findViewById(R.id.delete_name_que_item_tv);
+        TextView quetv = itemView.findViewById(R.id.delete_que_item_tv);
+      deletebtn = itemView.findViewById(R.id.delete_item_que_tv);
+
+        Picasso.get().load(url).into(imageView);
+        nametv.setText(name);
+        timetv.setText(time);
+        quetv.setText(question);
+    }
+
 }
