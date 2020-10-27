@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.socialmedia.R;
 import com.example.socialmedia.controller.AskActivity;
 import com.example.socialmedia.controller.PrivacyActivity;
+import com.example.socialmedia.controller.ReplyActivity;
 import com.example.socialmedia.controller.UpdateProfile;
 import com.example.socialmedia.model.QuestionMember;
 import com.example.socialmedia.view.BottomSheetF2;
@@ -101,6 +102,19 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
                 final String privacy = getItem(position).getPrivacy();
                 final String userid = getItem(position).getUserid();
 
+                holder.replybtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), ReplyActivity.class);
+                        intent.putExtra("uid",userid);
+                        intent.putExtra("q",que);
+                        intent.putExtra("postkey",postkey);
+                     //   intent.putExtra("key",privacy);
+                        startActivity(intent);
+
+                    }
+                });
+
                 holder.favouriteChecker(postkey);
                 holder.fvrt_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -126,8 +140,8 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
                                           member.setUrl(url);
                                           member.setQuestion(que);
 
-                                          String id = fvrt_listRef.push().getKey();
-                                          fvrt_listRef.child(id).setValue(member);
+                                          //String id = fvrt_listRef.push().getKey();
+                                          fvrt_listRef.child(postkey).setValue(member);
                                           fvrtChecker = false;
                                       }
                                   }
